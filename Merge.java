@@ -39,7 +39,31 @@ void merge(int arr[], int left_index, int right_index, int total_size){
             k++;
         }
 
+	while (i < size_left) {
+        	arr[k] = left_array[i];
+        	i++;
+        	k++;
+	}
 
-    }
+    /* Copy the remaining elements of R[], if there
+       are any */
+    	while (j < size_right){
+        	arr[k] = right_array[j];
+        	j++;
+        	k++;
+    	}
+}
+
+void mergeSortHelp(int arr[], int left_index_start, int right_index_start) {
+    if (left_index_start < right_index_start) {
+        	int m = left_index_start+(right_index_start-left_index_start)/2;
+
+        	// Sort first and second halves
+        	mergeSortHelp(arr, left_index_start, m);
+        	mergeSortHelp(arr, m+1, right_index_start);
+
+        	merge(arr, left_index_start, m, right_index_start);
+    	}
+}
 
 }
