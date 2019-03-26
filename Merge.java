@@ -45,8 +45,6 @@ void merge(int arr[], int left_index, int right_index, int total_size){
         	k++;
 	}
 
-    /* Copy the remaining elements of R[], if there
-       are any */
     	while (j < size_right){
         	arr[k] = right_array[j];
         	j++;
