@@ -13,9 +13,8 @@ void merge(int arr[], int left_index, int right_index, int total_size){
         int left_array[] = new int [size_left];
         int right_array[] = new int [size_right];
 
-
         for (int i=0; i < size_left; ++i){
-		left_array[i] = arr[left_index + 1];
+		left_array[i] = arr[left_index + i];
 	}
         for (int j=0; j < size_right; ++j){
 		right_array[j] = arr[right_index + 1+ j];
